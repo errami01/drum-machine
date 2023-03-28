@@ -16,13 +16,15 @@ const padsInfo = [
 ]
   const padsElements = padsInfo.map((audio)=>(
     <div id={audio.id} className="drum-pad">
-      <audio src={`https://s3.amazonaws.com/freecodecamp/drums/${audio.id}.mp3`} controls></audio>
+      <audio src={`https://s3.amazonaws.com/freecodecamp/drums/${audio.id}.mp3`} ></audio>
       {audio.letter}
     </div>
   ))
   return (
     <div className="App">
-     {padsElements}
+      <div className='pads-grid'>
+       {padsElements}
+      </div>
     </div>
   );
 }

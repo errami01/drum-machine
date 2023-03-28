@@ -1,7 +1,33 @@
+:root{
+  height: 100%;
+}
 body{
   margin: 0;
+  height: 100%;
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: red
 }
 .App {
- 
+ /* margin-top: auto; */
+ /* height: fit-content; */
+ background-color: green
 }
+.pads-grid{
+  display: grid;
+  grid-template-columns: repeat(3,150px);
+  grid-template-rows: repeat(3,100px);
+  gap: 5px;
+  justify-content: center;
+}
+.drum-pad{
+  display: flex;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
 
+}
