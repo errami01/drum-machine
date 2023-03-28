@@ -22,8 +22,11 @@ const padsInfo = [
   ))
   return (
     <div className="App">
-      <div className='pads-grid'>
-       {padsElements}
+      <header className='icon-bar'></header>
+      <div className='drum-section'>
+        <div className='pads-grid'>
+        {padsElements}
+        </div>
       </div>
     </div>
   );
