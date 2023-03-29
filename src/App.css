@@ -32,6 +32,7 @@ body{
   background-color: var(--background-color);
   justify-content: center;
   align-items: center;
+  box-shadow: 3px 3px 4px;
 
 }
 .icon-bar{
