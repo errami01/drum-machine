@@ -1,4 +1,5 @@
 import './App.css';
+import Pad from './Pad'
 
 function App() {
   // const padsInfo = ['Heater 1',"Heater 2",'Heater 3','Heater 4','Clap','Open-HH'," Kick-n'-Hat",'Kick','Closed-HH']
@@ -15,10 +16,7 @@ const padsInfo = [
   {id: 'Cev_H2', letter: "C"},
 ]
   const padsElements = padsInfo.map((audio)=>(
-    <div id={audio.id} className="drum-pad">
-      <audio src={`https://s3.amazonaws.com/freecodecamp/drums/${audio.id}.mp3`} ></audio>
-      {audio.letter}
-    </div>
+    <Pad id={audio.id} letter={audio.letter} />
   ))
   return (
     <div className="App">
