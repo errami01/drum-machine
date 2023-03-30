@@ -16,7 +16,7 @@ const padsInfo = [
   {id: 'Cev_H2', letter: "C"},
 ]
   const padsElements = padsInfo.map((audio)=>(
-    <Pad id={audio.id} letter={audio.letter} />
+    <Pad id={audio.id} letter={audio.letter} key={audio.id}/>
   ))
   return (
     <div className="App">

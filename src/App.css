@@ -24,7 +24,7 @@ body{
   display: grid;
   grid-template-columns: repeat(3,150px);
   grid-template-rows: repeat(3,100px);
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
 }
 .drum-pad{
@@ -33,8 +33,19 @@ body{
   justify-content: center;
   align-items: center;
   box-shadow: 3px 3px 4px;
+  /* animation: ripple 1s; */
 
 }
+
 .icon-bar{
   height: 25px;
+}
+@keyframes ripple {
+  0%{
+    background-color: orange;
+    box-shadow: none;
+  }
+  100%{
+    
+  }
 }
