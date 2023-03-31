@@ -1,9 +1,13 @@
 import './App.css';
 import Pad from './Pad'
+import Controle from './Controle';
+import { useState } from 'react';
 
 function App() {
   // const padsInfo = ['Heater 1',"Heater 2",'Heater 3','Heater 4','Clap','Open-HH'," Kick-n'-Hat",'Kick','Closed-HH']
   // export default App;
+  const [audioVolume, setAudioVolume] = useState(0.5)
+  // console.log(audioVolume)
 const padsInfo = [
   {id: 'Heater-1', letter: "Q"},
   {id: "Heater-2", letter: "W"},
@@ -15,8 +19,11 @@ const padsInfo = [
   {id: 'RP4_KICK_1', letter: "X"},
   {id: 'Cev_H2', letter: "C"},
 ]
+function trackAudioValume(volume= 0.5){
+  setAudioVolume(volume)
+}
   const padsElements = padsInfo.map((audio)=>(
-    <Pad id={audio.id} letter={audio.letter} key={audio.id}/>
+    <Pad id={audio.id} letter={audio.letter} key={audio.id} volume={audioVolume}/>
   ))
   return (
     <div className="App">
@@ -24,7 +31,12 @@ const padsInfo = [
       <div className='drum-section'>
         <div className='pads-grid'>
         {padsElements}
+        <Controle setAudioVolume={trackAudioValume}/>
         </div>
+        <div className='controle-panel'>
+
+        </div>
+
       </div>
     </div>
   );
