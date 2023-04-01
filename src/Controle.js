@@ -10,6 +10,11 @@ function Controle({setAudioVolume}){
     
     return (
         <div className='controle-container'>
+            <label value='Power'>Power</label>
+            <label className="switch">
+                <input type="checkbox"/>
+                <span className="slider"></span>
+            </label>
             <input 
                 className='volume-slider' 
                 type='range' 
@@ -18,6 +23,12 @@ function Controle({setAudioVolume}){
                
                 ref={sliderInput} 
                 onChange={handleSliderChange}/>
+            <label value='Power'>Bank</label>
+            <label className="switch">
+                <input type="checkbox"/>
+                <span className="slider"></span>
+            </label>
+            <label></label>
         </div>
     )
 }
