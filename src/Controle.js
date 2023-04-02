@@ -1,7 +1,7 @@
 import './App.css'
 import { useRef, useEffect } from 'react'
 
-function Controle({setAudioVolume}){
+function Controle({setAudioVolume, playedAudio}){
     const sliderInput = useRef()
     function handleSliderChange(){
         setAudioVolume(sliderInput.current.value/100)
@@ -15,6 +15,7 @@ function Controle({setAudioVolume}){
                 <input type="checkbox"/>
                 <span className="slider"></span>
             </label>
+            <div className='played-title'  id="display">{playedAudio}</div>
             <input 
                 className='volume-slider' 
                 type='range' 

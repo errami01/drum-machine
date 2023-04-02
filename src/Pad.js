@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useRef, useEffect } from 'react'
-function Pad({id, letter, volume}){
+function Pad({id, letter, volume, trackPlayedAudio}){
     const [playCount, setPlayCount] = useState(0)
     const audio = useRef()
     const padDiv = useRef()
@@ -18,13 +18,17 @@ function Pad({id, letter, volume}){
         })
         return ()=>{
             window.removeEventListener('keydown', (event)=>{
-                if(event.key === letter.toLowerCase()) handleClick()
+                
             })
         }
     },[])
     function handleClick(){
         isClicked.current = true;
+        
+        // document.querySelector('#display').innerHTML = id;
+        trackPlayedAudio(id)
         setPlayCount(prev=> prev+1) 
+        
     }
 
     
@@ -36,7 +40,7 @@ function Pad({id, letter, volume}){
    
     <div 
         id={id} 
-        className={`drum-pad `} 
+        className={`drum-pad`} 
         onClick={handleClick} 
         tabIndex={0} 
         onKeyDown={handleKeyDown}
@@ -47,7 +51,8 @@ function Pad({id, letter, volume}){
       <audio 
         src={`https://s3.amazonaws.com/freecodecamp/drums/${id}.mp3`} 
         ref={audio} 
-        
+        className='clip'
+        id ={letter}
         ></audio>
       {letter}
     </div>

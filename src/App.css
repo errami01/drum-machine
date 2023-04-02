@@ -23,6 +23,9 @@ body{
  background-color: var(--forground-color);
  padding: 0 25px 25px
 }
+.drum-section{
+  display: flex;
+}
 .pads-grid{
   display: grid;
   grid-template-columns: repeat(3,150px);
@@ -42,15 +45,28 @@ body{
 .controle-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 300px;
+  /* background-color: green; */
 }
 .icon-bar{
   height: 25px;
 }
-
+.played-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 80%;
+  margin-top: 20px;
+  /* text-align: center; */
+  background-color: var(--background-color);
+}
 .volume-slider{
   background-color: green;
   cursor: pointer;
+  margin: 20px 0
 }
 .switch input {
   opacity: 0;
@@ -62,6 +78,7 @@ body{
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-top: 5px;
 }
 .slider {
   position: absolute;

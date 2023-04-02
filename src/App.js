@@ -7,6 +7,7 @@ function App() {
   // const padsInfo = ['Heater 1',"Heater 2",'Heater 3','Heater 4','Clap','Open-HH'," Kick-n'-Hat",'Kick','Closed-HH']
   // export default App;
   const [audioVolume, setAudioVolume] = useState(0.5)
+  const [playedAudio, setPlayedAudio] = useState('')
   // console.log(audioVolume)
 const padsInfo = [
   {id: 'Heater-1', letter: "Q"},
@@ -19,23 +20,23 @@ const padsInfo = [
   {id: 'RP4_KICK_1', letter: "X"},
   {id: 'Cev_H2', letter: "C"},
 ]
-function trackAudioValume(volume= 0.5){
+function trackAudioVolume(volume= 0.5){
   setAudioVolume(volume)
 }
+function trackPlayedAudio(audioId){
+  setPlayedAudio(audioId)
+}
   const padsElements = padsInfo.map((audio)=>(
-    <Pad id={audio.id} letter={audio.letter} key={audio.id} volume={audioVolume}/>
+    <Pad id={audio.id} letter={audio.letter} key={audio.id} volume={audioVolume} trackPlayedAudio={trackPlayedAudio}/>
   ))
   return (
-    <div className="App">
+    <div className="App" id="drum-machine">
       <header className='icon-bar'></header>
       <div className='drum-section'>
         <div className='pads-grid'>
         {padsElements}
-        <Controle setAudioVolume={trackAudioValume}/>
         </div>
-        <div className='controle-panel'>
-
-        </div>
+        <Controle setAudioVolume={trackAudioVolume} playedAudio={playedAudio}/>
 
       </div>
     </div>
